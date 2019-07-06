@@ -22,7 +22,7 @@ class Chain extends React.Component {
       this.state.chain.push(block);
       this.setState({
         currentBlock: block
-      })
+      });
       return true;
     }
 
@@ -32,12 +32,15 @@ class Chain extends React.Component {
   componentDidMount() {
     let genesisBlock = Object.assign(this.state.genesisBlock); // Pull the entire items object out. Using object.assign is a good idea for objects.
     genesisBlock.hash = createHash(this.state.genesisBlock); // update the items object as needed
-    this.setState({  genesisBlock }); // Put back in state
-    this.addToChain(this.state.genesisBlock);
+    this.setState({ genesisBlock }); // Put back in state
+    this.state.chain.push(genesisBlock);
+    this.setState({
+      currentBlock: genesisBlock
+    });
   }
 
   render() {
-    const cards = [1, 2, 3, 4];
+    console.log(this.state);
 
     return (
       <main style={{ marginTop: "2rem" }}>
@@ -48,7 +51,7 @@ class Chain extends React.Component {
             overflowY: "hidden"
           }}
         >
-          {cards.map(card => (
+          {this.state.chain.map(card => (
             <MyCard />
           ))}
         </div>
