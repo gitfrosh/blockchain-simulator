@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { Button, Popup, Modal } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Popup, Modal, Form, Input } from "semantic-ui-react";
 
 function AddBlock() {
-
   const [isTipToolOpen, switchTipTool] = useState(true);
 
   const button = (
     <div class="add-button">
-      <button onClick={() => switchTipTool(false)} class="ui circular icon button circle-button">
+      <button
+        onClick={() => switchTipTool(false)}
+        class="ui circular icon button circle-button"
+      >
         <i aria-hidden="true" class="plus icon" />
       </button>
     </div>
@@ -29,8 +31,15 @@ function AddBlock() {
 
       <Modal
         trigger={button}
-        header="Reminder!"
-        content="Call Benjamin regarding the reports."
+        size="mini"
+        header="Add a new block!"
+        content={
+          <div style={{ margin: "10px 10px 10px 10px" }}>
+            <Form.Field required>
+              <Input label="Data" />
+            </Form.Field>
+          </div>
+        }
         actions={["Snooze", { key: "done", content: "Done", positive: true }]}
       />
     </div>
