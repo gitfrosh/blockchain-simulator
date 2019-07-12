@@ -2,7 +2,7 @@
   "name": "blockchain-simulator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/gitfrosh/blockchain-simulator",
+  "homepage": "https://gitfrosh.github.io/blockchain-simulator",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "gh-pages": "^2.0.1",
