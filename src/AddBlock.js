@@ -1,19 +1,13 @@
 import React from "react";
-import {
-  Popup,
-  Modal,
-  Form,
-  Header,
-  Button,
-  Icon,
-} from "semantic-ui-react";
+import { Popup, Modal, Form, Header, Button, Icon } from "semantic-ui-react";
 
 class AddBlock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isTipToolOpen: true,
-      data: ""
+      data: "",
+      modalOpen: false
     };
   }
 
@@ -27,7 +21,17 @@ class AddBlock extends React.Component {
     if (this.state.data) {
       const newBlock = this.props.createBlock(this.state.data);
       this.props.addToChain(newBlock);
+      this.setState({
+        modalOpen: false
+      });
     }
+  };
+
+  clickAddButton = () => {
+    this.switchTipTool(false);
+    this.setState({
+      modalOpen: true
+    });
   };
 
   switchTipTool(mode) {
@@ -39,7 +43,7 @@ class AddBlock extends React.Component {
     const button = (
       <div className="add-button">
         <button
-          onClick={() => this.switchTipTool(false)}
+          onClick={() => this.clickAddButton()}
           className="ui circular icon button circle-button"
         >
           <i aria-hidden="true" className="plus icon" />
@@ -60,8 +64,8 @@ class AddBlock extends React.Component {
           trigger={button}
         />
 
-        <Modal trigger={button} size="mini">
-          <Header icon="list" content="Add a new block!" />
+        <Modal open={this.state.modalOpen} trigger={button} size="mini">
+          <Header icon="plus circle" content="Add a new block!" />
           <Form>
             <Modal.Content>
               <div style={{ margin: "10px 10px 10px 10px" }}>

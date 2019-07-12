@@ -13,7 +13,7 @@ function App() {
             simulator .
           </h1>
           <div className="ui divider" />
-          <p className="marked">
+          <p style={{ maxWidth: "35rem" }} className="marked">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
