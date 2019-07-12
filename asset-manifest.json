@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/gitfrosh/blockchain-simulator/static/css/main.b050228f.chunk.css",
+    "main.js": "/gitfrosh/blockchain-simulator/static/js/main.2a40f057.chunk.js",
+    "main.js.map": "/gitfrosh/blockchain-simulator/static/js/main.2a40f057.chunk.js.map",
+    "runtime~main.js": "/gitfrosh/blockchain-simulator/static/js/runtime~main.e89ba1b6.js",
+    "runtime~main.js.map": "/gitfrosh/blockchain-simulator/static/js/runtime~main.e89ba1b6.js.map",
+    "static/css/2.d7f24350.chunk.css": "/gitfrosh/blockchain-simulator/static/css/2.d7f24350.chunk.css",
+    "static/js/2.27ca82d0.chunk.js": "/gitfrosh/blockchain-simulator/static/js/2.27ca82d0.chunk.js",
+    "static/js/2.27ca82d0.chunk.js.map": "/gitfrosh/blockchain-simulator/static/js/2.27ca82d0.chunk.js.map",
+    "index.html": "/gitfrosh/blockchain-simulator/index.html",
+    "precache-manifest.7d750129caecea45ade3523c6d81fd39.js": "/gitfrosh/blockchain-simulator/precache-manifest.7d750129caecea45ade3523c6d81fd39.js",
+    "service-worker.js": "/gitfrosh/blockchain-simulator/service-worker.js",
+    "static/css/2.d7f24350.chunk.css.map": "/gitfrosh/blockchain-simulator/static/css/2.d7f24350.chunk.css.map",
+    "static/css/main.b050228f.chunk.css.map": "/gitfrosh/blockchain-simulator/static/css/main.b050228f.chunk.css.map",
+    "static/media/semantic.min.css": "/gitfrosh/blockchain-simulator/static/media/outline-icons.ef60a4f6.woff"
+  }
+}
