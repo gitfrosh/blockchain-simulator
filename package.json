@@ -2,8 +2,10 @@
   "name": "blockchain-simulator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/gitfrosh/blockchain-simulator",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -11,6 +13,8 @@
     "semantic-ui-react": "^0.87.2"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
