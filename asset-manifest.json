@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/gitfrosh/blockchain-simulator/static/css/main.b050228f.chunk.css",
-    "main.js": "/gitfrosh/blockchain-simulator/static/js/main.2a40f057.chunk.js",
-    "main.js.map": "/gitfrosh/blockchain-simulator/static/js/main.2a40f057.chunk.js.map",
-    "runtime~main.js": "/gitfrosh/blockchain-simulator/static/js/runtime~main.e89ba1b6.js",
-    "runtime~main.js.map": "/gitfrosh/blockchain-simulator/static/js/runtime~main.e89ba1b6.js.map",
-    "static/css/2.d7f24350.chunk.css": "/gitfrosh/blockchain-simulator/static/css/2.d7f24350.chunk.css",
-    "static/js/2.27ca82d0.chunk.js": "/gitfrosh/blockchain-simulator/static/js/2.27ca82d0.chunk.js",
-    "static/js/2.27ca82d0.chunk.js.map": "/gitfrosh/blockchain-simulator/static/js/2.27ca82d0.chunk.js.map",
-    "index.html": "/gitfrosh/blockchain-simulator/index.html",
-    "precache-manifest.7d750129caecea45ade3523c6d81fd39.js": "/gitfrosh/blockchain-simulator/precache-manifest.7d750129caecea45ade3523c6d81fd39.js",
-    "service-worker.js": "/gitfrosh/blockchain-simulator/service-worker.js",
-    "static/css/2.d7f24350.chunk.css.map": "/gitfrosh/blockchain-simulator/static/css/2.d7f24350.chunk.css.map",
-    "static/css/main.b050228f.chunk.css.map": "/gitfrosh/blockchain-simulator/static/css/main.b050228f.chunk.css.map",
-    "static/media/semantic.min.css": "/gitfrosh/blockchain-simulator/static/media/outline-icons.ef60a4f6.woff"
+    "main.css": "/blockchain-simulator/static/css/main.b050228f.chunk.css",
+    "main.js": "/blockchain-simulator/static/js/main.ad1a6f82.chunk.js",
+    "main.js.map": "/blockchain-simulator/static/js/main.ad1a6f82.chunk.js.map",
+    "runtime~main.js": "/blockchain-simulator/static/js/runtime~main.c93eadf5.js",
+    "runtime~main.js.map": "/blockchain-simulator/static/js/runtime~main.c93eadf5.js.map",
+    "static/css/2.8ee88204.chunk.css": "/blockchain-simulator/static/css/2.8ee88204.chunk.css",
+    "static/js/2.9122ab63.chunk.js": "/blockchain-simulator/static/js/2.9122ab63.chunk.js",
+    "static/js/2.9122ab63.chunk.js.map": "/blockchain-simulator/static/js/2.9122ab63.chunk.js.map",
+    "index.html": "/blockchain-simulator/index.html",
+    "precache-manifest.306db8405bd5311482577349536b01f7.js": "/blockchain-simulator/precache-manifest.306db8405bd5311482577349536b01f7.js",
+    "service-worker.js": "/blockchain-simulator/service-worker.js",
+    "static/css/2.8ee88204.chunk.css.map": "/blockchain-simulator/static/css/2.8ee88204.chunk.css.map",
+    "static/css/main.b050228f.chunk.css.map": "/blockchain-simulator/static/css/main.b050228f.chunk.css.map",
+    "static/media/semantic.min.css": "/blockchain-simulator/static/media/outline-icons.ef60a4f6.woff"
   }
 }
