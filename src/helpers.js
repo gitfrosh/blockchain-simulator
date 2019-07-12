@@ -8,7 +8,7 @@ function createHash({ timestamp, data, index, previousHash, nonce  }) {
 function proofOfWork(block) {
   while (true) {
     block.hash = createHash(block);
-    if (block.hash.slice(0, 3) === "000") {
+    if (block.hash.slice(0, 4) === "0000") {
       return block;
     } else {
       block.nonce++;
@@ -38,4 +38,4 @@ function hashIsValid(block) {
   return createHash(block) === block.hash;
 }
 
-export { createHash, checkNewBlockIsValid, proofOfWork };
+export { createHash, checkNewBlockIsValid, proofOfWork, hashIsValid };

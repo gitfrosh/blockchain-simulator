@@ -14,10 +14,16 @@ function App() {
           </h1>
           <div className="ui divider" />
           <p style={{ maxWidth: "35rem" }} className="marked">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren,
+            The blockchain starts with the genesis block and can be continued by
+            adding more blocks. Each block points to the block before through
+            the previous block's hash. The newly created hash is the fingerprint
+            of the summoned data, index, previous hash, timestamp and nonce. The
+            mined nonce makes sure that the hash begins with four zeros and
+            makes the block therefore "signed". <br />
+            <br />
+            Manipulating any data within any block of the blockchain (which can
+            not be simulated (yet) in this demo) breaks the chain and results in
+            invalid blocks.
           </p>
         </header>
         <Chain />
