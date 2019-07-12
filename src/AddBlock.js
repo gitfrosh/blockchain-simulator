@@ -27,7 +27,7 @@ class AddBlock extends React.Component {
   handleClick = () => {
     if (this.state.data) {
       const newBlock = this.props.createBlock(this.state.data);
-      console.log(newBlock);
+      this.props.addToChain(newBlock);
     }
   };
 
@@ -47,11 +47,7 @@ class AddBlock extends React.Component {
         </button>
       </div>
     );
-    console.log(this.state.data);
     return (
-      // const [isTipToolOpen, switchTipTool] = useState(true);
-      // const [data, changeData] = useState("");
-
       <div>
         <Popup
           content={

@@ -1,7 +1,7 @@
 import React from "react";
 import MyCard from "./MyCard";
 import AddBlock from "./AddBlock";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
+import { Loader } from "semantic-ui-react";
 // import * from "./helpers";
 import { createHash, checkNewBlockIsValid, proofOfWork } from "./helpers.js";
 
@@ -10,23 +10,29 @@ class Chain extends React.Component {
     super(props);
     this.state = {
       genesisBlock: {
-        index: 0,
-        timestamp: new Date().toLocaleString(),
-        data: "Our genesis data",
-        previousHash: "-1",
-        nonce: 0
+        // index: 0,
+        // timestamp: new Date().toLocaleString(),
+        // data: "Our genesis data",
+        // previousHash: "-1",
+        // nonce: 0
       },
       currentBlock: {},
       chain: []
     };
   }
 
+  // updateBlock = blockIndex => {
+
+  // }
+
   createBlock = data => {
     let newBlock = {
-      timestamp: new Date().getTime(),
+      timestamp: new Date().toLocaleString(),
       data: data,
-      index: this.state.currentBlock.index + 1,
-      previousHash: this.state.currentBlock.hash,
+      index:
+        (this.state.currentBlock && this.state.currentBlock.index + 1) || 0,
+      previousHash:
+        (this.state.currentBlock && this.state.currentBlock.hash) || -1,
       nonce: 0
     };
 
@@ -35,9 +41,13 @@ class Chain extends React.Component {
     return newBlock;
   };
 
-  addToChain(block) {
-    if (checkNewBlockIsValid(block, this.state.currentBlock)) {
+  addToChain = (block, isGenesisBlock) => {
+    if (
+      isGenesisBlock ||
+      checkNewBlockIsValid(block, this.state.currentBlock)
+    ) {
       this.state.chain.push(block);
+
       this.setState({
         currentBlock: block
       });
@@ -45,37 +55,38 @@ class Chain extends React.Component {
     }
 
     return false;
-  }
+  };
 
   componentDidMount() {
-    let genesisBlock = Object.assign(this.state.genesisBlock); // Pull the entire items object out. Using object.assign is a good idea for objects.
-    genesisBlock.hash = createHash(this.state.genesisBlock); // update the items object as needed
-    this.setState({ genesisBlock }); // Put back in state
-    this.state.chain.push(genesisBlock);
-    this.setState({
-      currentBlock: genesisBlock
-    });
+    const genesisBlock = this.createBlock("Our genesis data");
+    this.addToChain(genesisBlock, true);
   }
 
   render() {
-    console.log(this.state);
-
-    return (
-      <main style={{ marginTop: "2rem" }}>
-        <div
-          style={{
-            display: "flex",
-            overflowX: "scroll",
-            overflowY: "hidden"
-          }}
-        >
-          {this.state.chain.map(card => (
-            <MyCard block={card} />
-          ))}
-        </div>
-        <AddBlock createBlock={this.createBlock} addToChain={this.addToChain} />
-      </main>
-    );
+    if (this.state.chain.length === 0) {
+      return <Loader />;
+    } else {
+      return (
+        <main style={{ marginTop: "2rem" }}>
+          <div
+            style={{
+              display: "flex",
+              overflowX: "scroll",
+              overflowY: "hidden",
+              scrollbarColor: "red yellow !important"
+            }}
+          >
+            {this.state.chain.map(card => (
+              <MyCard block={card} />
+            ))}
+          </div>
+          <AddBlock
+            createBlock={this.createBlock}
+            addToChain={this.addToChain}
+          />
+        </main>
+      );
+    }
   }
 }
 

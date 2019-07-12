@@ -56,3 +56,13 @@ h1 {
 .ui.mini.modal {
   width:50%
 }
+
+body ::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 0px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background: #00b5ad;
+  border-radius: 0px;
+}

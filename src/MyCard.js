@@ -1,7 +1,15 @@
 import React from "react";
-import { Grid, Input, Label, Segment } from "semantic-ui-react";
+import { Button, Input, Label } from "semantic-ui-react";
 
 class MyCard extends React.Component {
+  recreateHash = () => {
+    console.log("recreate", this.props.block.index);
+  };
+
+  // hashIsValid = block => {
+  //   return createHash(block) == block.hash;
+  // };
+
   render() {
     return (
       <div class="ui yellow card">
@@ -46,9 +54,11 @@ class MyCard extends React.Component {
             />
           </div>
         </div>
-        <div class="extra content">
-          <i aria-hidden="true" class="user icon" />4 Friends
-        </div>
+        {/* <div class="extra content">
+          <Button onClick={this.recreateHash} fluid>
+            <i aria-hidden="true" class="redo icon" /> Recreate Hash
+          </Button>
+        </div> */}
       </div>
     );
   }
