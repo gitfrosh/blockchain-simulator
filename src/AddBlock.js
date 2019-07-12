@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Popup,
   Modal,
@@ -6,7 +6,6 @@ import {
   Header,
   Button,
   Icon,
-  Input
 } from "semantic-ui-react";
 
 class AddBlock extends React.Component {
@@ -38,12 +37,12 @@ class AddBlock extends React.Component {
   }
   render() {
     const button = (
-      <div class="add-button">
+      <div className="add-button">
         <button
           onClick={() => this.switchTipTool(false)}
-          class="ui circular icon button circle-button"
+          className="ui circular icon button circle-button"
         >
-          <i aria-hidden="true" class="plus icon" />
+          <i aria-hidden="true" className="plus icon" />
         </button>
       </div>
     );

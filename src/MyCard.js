@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input, Label } from "semantic-ui-react";
+import { Input, Label } from "semantic-ui-react";
 
 class MyCard extends React.Component {
   recreateHash = () => {
@@ -12,17 +12,17 @@ class MyCard extends React.Component {
 
   render() {
     return (
-      <div class="ui yellow card">
-        <div class="content">
-          <div class="header">
+      <div className="ui yellow card">
+        <div className="content">
+          <div className="header">
             {this.props.block.index === 0
               ? "Genesis Block"
               : `#${this.props.block.index}`}
           </div>
-          <div class="meta">{this.props.block.timestamp}</div>
+          <div className="meta">{this.props.block.timestamp}</div>
         </div>
-        <div class="content">
-          <div class="description">
+        <div className="content">
+          <div className="description">
             <Label as="a" color="teal" ribbon>
               Previous Hash
             </Label>
@@ -54,9 +54,9 @@ class MyCard extends React.Component {
             />
           </div>
         </div>
-        {/* <div class="extra content">
+        {/* <div className="extra content">
           <Button onClick={this.recreateHash} fluid>
-            <i aria-hidden="true" class="redo icon" /> Recreate Hash
+            <i aria-hidden="true" className="redo icon" /> Recreate Hash
           </Button>
         </div> */}
       </div>

@@ -2,8 +2,7 @@ import React from "react";
 import MyCard from "./MyCard";
 import AddBlock from "./AddBlock";
 import { Loader } from "semantic-ui-react";
-// import * from "./helpers";
-import { createHash, checkNewBlockIsValid, proofOfWork } from "./helpers.js";
+import { checkNewBlockIsValid, proofOfWork } from "./helpers.js";
 
 class Chain extends React.Component {
   constructor(props) {
@@ -76,8 +75,8 @@ class Chain extends React.Component {
               scrollbarColor: "red yellow !important"
             }}
           >
-            {this.state.chain.map(card => (
-              <MyCard block={card} />
+            {this.state.chain.map((card, index) => (
+              <MyCard key={index} block={card} />
             ))}
           </div>
           <AddBlock
