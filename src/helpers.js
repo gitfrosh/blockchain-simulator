@@ -1,9 +1,21 @@
-function createHash({ timestamp, data, index, previousHash }) {
+function createHash({ timestamp, data, index, previousHash, nonce  }) {
   var CryptoJS = require("crypto-js");
-  var message = CryptoJS.enc.Hex.parse(timestamp + data + index + previousHash);
+  var message = CryptoJS.enc.Hex.parse(timestamp + data + index + previousHash + nonce);
   var hash = CryptoJS.SHA256(message);
-  console.log(hash.toString());
+  // console.log(hash.toString());
   return hash.toString();
+}
+
+function proofOfWork(block) {
+  while (true) {
+    block.hash = createHash(block);
+    if (block.hash.slice(0, 3) === "000") {
+      console.log("proofed!")
+      return block;
+    } else {
+      block.nonce++;
+    }
+  }
 }
 
 function checkNewBlockIsValid(block, previousBlock) {
@@ -35,4 +47,4 @@ function hashIsValid(block) {
 //   alert(`Hello, ${user}!`);
 // }
 
-export { createHash, checkNewBlockIsValid };
+export { createHash, checkNewBlockIsValid, proofOfWork };

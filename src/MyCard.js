@@ -1,37 +1,57 @@
 import React from "react";
-import { Grid, Image, Label, Segment } from "semantic-ui-react";
+import { Grid, Input, Label, Segment } from "semantic-ui-react";
 
-function MyCard() {
-  return (
-    <div class="ui yellow card">
-      <div class="content">
-        <div class="header">Daniel</div>
-        <div class="meta">Joined in 2016</div>
-      </div>
-      <div class="content">
-        <div class="description">
-          <Label as="a" color="teal" ribbon>
-            Overview
-          </Label>
-          <div style={{ marginBottom: "1rem" }} class="ui input">
-            <input type="text" placeholder="Search..." />
+class MyCard extends React.Component {
+  render() {
+    return (
+      <div class="ui yellow card">
+        <div class="content">
+          <div class="header">
+            {this.props.block.index === 0
+              ? "Genesis Block"
+              : `#${this.props.block.index}`}
           </div>
-          <Label as="a" color="teal" ribbon>
-            Overview
-          </Label>
-          <div style={{ marginBottom: "1rem" }} class="ui input">
-            <input type="text" placeholder="Search..." />
+          <div class="meta">{this.props.block.timestamp}</div>
+        </div>
+        <div class="content">
+          <div class="description">
+            <Label as="a" color="teal" ribbon>
+              Previous Hash
+            </Label>
+            <br />
+            <Input
+              size="mini"
+              style={{ marginBottom: "1rem", minWidth: "100%" }}
+              value={this.props.block.previousHash}
+            />
+            <br />
+            <Label as="a" color="teal" ribbon>
+              Hash
+            </Label>
+            <br />
+            <Input
+              size="mini"
+              style={{ marginBottom: "1rem", minWidth: "100%" }}
+              value={this.props.block.hash}
+            />
+            <br />
+            <Label as="a" color="teal" ribbon>
+              Nonce
+            </Label>
+            <br />
+            <Input
+              size="mini"
+              style={{ marginBottom: "1rem", minWidth: "100%" }}
+              value={this.props.block.nonce}
+            />
           </div>
-          <Label as="a" color="teal" ribbon>
-            Overview
-          </Label>
+        </div>
+        <div class="extra content">
+          <i aria-hidden="true" class="user icon" />4 Friends
         </div>
       </div>
-      <div class="extra content">
-        <i aria-hidden="true" class="user icon" />4 Friends
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default MyCard;

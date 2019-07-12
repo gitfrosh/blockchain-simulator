@@ -3,18 +3,36 @@ import MyCard from "./MyCard";
 import AddBlock from "./AddBlock";
 import { Button, Header, Image, Modal } from "semantic-ui-react";
 // import * from "./helpers";
-import { createHash, checkNewBlockIsValid } from "./helpers.js";
+import { createHash, checkNewBlockIsValid, proofOfWork } from "./helpers.js";
 
 class Chain extends React.Component {
-  state = {
-    genesisBlock: {
-      index: 0,
+  constructor(props) {
+    super(props);
+    this.state = {
+      genesisBlock: {
+        index: 0,
+        timestamp: new Date().toLocaleString(),
+        data: "Our genesis data",
+        previousHash: "-1",
+        nonce: 0
+      },
+      currentBlock: {},
+      chain: []
+    };
+  }
+
+  createBlock = data => {
+    let newBlock = {
       timestamp: new Date().getTime(),
-      data: "Our genesis data",
-      previousHash: "-1"
-    },
-    currentBlock: {},
-    chain: []
+      data: data,
+      index: this.state.currentBlock.index + 1,
+      previousHash: this.state.currentBlock.hash,
+      nonce: 0
+    };
+
+    newBlock = proofOfWork(newBlock);
+
+    return newBlock;
   };
 
   addToChain(block) {
@@ -52,10 +70,10 @@ class Chain extends React.Component {
           }}
         >
           {this.state.chain.map(card => (
-            <MyCard />
+            <MyCard block={card} />
           ))}
         </div>
-        <AddBlock />
+        <AddBlock createBlock={this.createBlock} addToChain={this.addToChain} />
       </main>
     );
   }
